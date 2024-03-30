@@ -11,7 +11,7 @@ from PIL import Image, ImageChops, ImageDraw, ImageEnhance, ImageFilter, ImageFo
 from youtubesearchpython.__future__ import VideosSearch
 
 from config import YOUTUBE_IMG_URL
-from SoloCloud import app
+from AnonXMusic import app
 
 
 def changeImageSize(maxWidth, maxHeight, image):
