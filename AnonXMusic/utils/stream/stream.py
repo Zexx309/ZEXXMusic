@@ -5,15 +5,15 @@ from typing import Union
 from pyrogram.types import InlineKeyboardMarkup
 
 import config
-from AnonXMusic import Carbon, YouTube, app
-from AnonXMusic.core.call import Anony
-from AnonXMusic.misc import db
-from AnonXMusic.utils.database import add_active_video_chat, is_active_chat
-from AnonXMusic.utils.exceptions import AssistantErr
-from AnonXMusic.utils.inline import aq_markup, close_markup, stream_markup
-from AnonXMusic.utils.pastebin import AnonyBin
-from AnonXMusic.utils.stream.queue import put_queue, put_queue_index
-from AnonXMusic.utils.thumbnails import get_thumb
+from AdisaX import Carbon, YouTube, app
+from AdisaX.core.call import Dil
+from AdisaX.misc import db
+from AdisaX.utils.database import add_active_video_chat, is_active_chat
+from AdisaX.utils.exceptions import AssistantErr
+from AdisaX.utils.inline import aq_markup, close_markup, stream_markup
+from AdisaX.utils.pastebin import DilBin
+from AdisaX.utils.stream.queue import put_queue, put_queue_index
+from AdisaX.utils.thumbnails import get_thumb
 
 
 async def stream(
@@ -32,7 +32,7 @@ async def stream(
     if not result:
         return
     if forceplay:
-        await Anony.force_stop_stream(chat_id)
+        await Dil.force_stop_stream(chat_id)
     if streamtype == "playlist":
         msg = f"{_['play_19']}\n\n"
         count = 0
@@ -79,7 +79,7 @@ async def stream(
                     )
                 except:
                     raise AssistantErr(_["play_14"])
-                await Anony.join_call(
+                await Dil.join_call(
                     chat_id,
                     original_chat_id,
                     file_path,
@@ -98,7 +98,7 @@ async def stream(
                     "video" if video else "audio",
                     forceplay=forceplay,
                 )
-                img = await get_thumb(vidid)
+                img = await get_thumb(vidid, user_id)
                 button = stream_markup(_, chat_id)
                 run = await app.send_photo(
                     original_chat_id,
@@ -116,7 +116,7 @@ async def stream(
         if count == 0:
             return
         else:
-            link = await AnonyBin(msg)
+            link = await DilBin(msg)
             lines = msg.count("\n")
             if lines >= 17:
                 car = os.linesep.join(msg.split(os.linesep)[:17])
@@ -165,7 +165,7 @@ async def stream(
         else:
             if not forceplay:
                 db[chat_id] = []
-            await Anony.join_call(
+            await Dil.join_call(
                 chat_id,
                 original_chat_id,
                 file_path,
@@ -184,7 +184,7 @@ async def stream(
                 "video" if video else "audio",
                 forceplay=forceplay,
             )
-            img = await get_thumb(vidid)
+            img = await get_thumb(vidid, user_id)
             button = stream_markup(_, chat_id)
             run = await app.send_photo(
                 original_chat_id,
@@ -225,7 +225,7 @@ async def stream(
         else:
             if not forceplay:
                 db[chat_id] = []
-            await Anony.join_call(chat_id, original_chat_id, file_path, video=None)
+            await Dil.join_call(chat_id, original_chat_id, file_path, video=None)
             await put_queue(
                 chat_id,
                 original_chat_id,
@@ -277,7 +277,7 @@ async def stream(
         else:
             if not forceplay:
                 db[chat_id] = []
-            await Anony.join_call(chat_id, original_chat_id, file_path, video=status)
+            await Dil.join_call(chat_id, original_chat_id, file_path, video=status)
             await put_queue(
                 chat_id,
                 original_chat_id,
@@ -333,7 +333,7 @@ async def stream(
             n, file_path = await YouTube.video(link)
             if n == 0:
                 raise AssistantErr(_["str_3"])
-            await Anony.join_call(
+            await Dil.join_call(
                 chat_id,
                 original_chat_id,
                 file_path,
@@ -391,7 +391,7 @@ async def stream(
         else:
             if not forceplay:
                 db[chat_id] = []
-            await Anony.join_call(
+            await Dil.join_call(
                 chat_id,
                 original_chat_id,
                 link,
