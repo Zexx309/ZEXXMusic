@@ -124,9 +124,9 @@ async def get_thumb(videoid, user_id):
         draw = ImageDraw.Draw(background)
         font = ImageFont.truetype("AnonXMusic/assets/font2.ttf", 45)
         ImageFont.truetype("AnonXMusic/assets/font2.ttf", 70)
+        draw.text((20, 10), "˹Sᴡᴇʟʟʏ ꭙ ᴍᴜꜱɪᴄ˼", fill="white", font=font1, align="left")
         arial = ImageFont.truetype("AnonXMusic/assets/font2.ttf", 30)
         ImageFont.truetype("AnonXMusic/assets/font.ttf", 30)
-        draw.text((20, 10), "˹Sᴡᴇʟʟʏ ꭙ ᴍᴜꜱɪᴄ˼", fill="white", font=font1, align="left")
         para = textwrap.wrap(title, width=29)
         j = 0
         for line in para:
