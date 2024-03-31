@@ -6,7 +6,7 @@ from pyrogram.types import InlineKeyboardMarkup
 
 import config
 from AnonXMusic import Carbon, YouTube, app
-from AnonXMusic.core.call import Dil
+from AnonXMusic.core.call import Anony
 from AnonXMusic.misc import db
 from AnonXMusic.utils.database import add_active_video_chat, is_active_chat
 from AnonXMusic.utils.exceptions import AssistantErr
