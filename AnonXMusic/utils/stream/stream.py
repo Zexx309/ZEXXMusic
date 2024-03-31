@@ -5,15 +5,15 @@ from typing import Union
 from pyrogram.types import InlineKeyboardMarkup
 
 import config
-from AdisaX import Carbon, YouTube, app
-from AdisaX.core.call import Dil
-from AdisaX.misc import db
-from AdisaX.utils.database import add_active_video_chat, is_active_chat
-from AdisaX.utils.exceptions import AssistantErr
-from AdisaX.utils.inline import aq_markup, close_markup, stream_markup
-from AdisaX.utils.pastebin import DilBin
-from AdisaX.utils.stream.queue import put_queue, put_queue_index
-from AdisaX.utils.thumbnails import get_thumb
+from AnonXMusic import Carbon, YouTube, app
+from AnonXMusic.core.call import Dil
+from AnonXMusic.misc import db
+from AnonXMusic.utils.database import add_active_video_chat, is_active_chat
+from AnonXMusic.utils.exceptions import AssistantErr
+from AnonXMusic.utils.inline import aq_markup, close_markup, stream_markup
+from AnonXMusic.utils.pastebin import DilBin
+from AnonXMusic.utils.stream.queue import put_queue, put_queue_index
+from AnonXMusic.utils.thumbnails import get_thumb
 
 
 async def stream(
