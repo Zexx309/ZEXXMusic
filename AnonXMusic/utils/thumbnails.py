@@ -156,7 +156,7 @@ async def get_thumb(videoid, user_id):
                     (20, 675),
                      f"{channel} | {views[:23]}",
                      (255, 255, 255),
-                     font=adisa,
+                     font=font,
                 )
 
         try:
