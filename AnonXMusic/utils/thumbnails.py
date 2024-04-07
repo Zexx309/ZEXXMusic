@@ -50,9 +50,9 @@ async def get_thumb(videoid, user_id):
                 duration = "Unknown"
             thumbnail = result["thumbnails"][0]["url"].split("?")[0]
             try:
-                result["viewCount"]["short"]
+                views = result["viewCount"]["short"]
             except:
-                pass
+                views = "Unknown Views"
             try:
                 channel = result["channel"]["name"]
             except:
