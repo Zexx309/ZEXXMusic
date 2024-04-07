@@ -54,9 +54,9 @@ async def get_thumb(videoid, user_id):
             except:
                 pass
             try:
-                result["channel"]["name"]
+                channel = result["channel"]["name"]
             except:
-                pass
+                channel = "Unknown Channel"
 
         async with aiohttp.ClientSession() as session:
             async with session.get(thumbnail) as resp:
